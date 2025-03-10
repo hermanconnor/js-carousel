@@ -1,14 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/styles.css">
-  <script defer src="js/script.js"></script>
-  <title>JavaScript Carousel</title>
-</head>
-<body>
-  <main></main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script defer src="js/script.js"></script>
+    <title>Responsive Carousel</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Responsive Carousel with Indicator Dots</h1>
+        <p>
+          A fully responsive carousel with navigation controls and indicator
+          dots.
+        </p>
+      </header>
+
+      <section class="carousel-container">
+        <div id="carousel" class="carousel">
+          <div
+            class="carousel-inner"
+            role="region"
+            aria-roledescription="carousel"
+            aria-label="Image carousel"
+          >
+            <!-- SLIDE 1 -->
+            <figure
+              class="carousel-slide active"
+              role="group"
+              aria-roledescription="slide"
+              aria-label="Slide 1 of 3"
+            >
+              <img src="images/beach1.jpg" alt="Beach sunset" />
+              <figcaption class="carousel-caption">
+                <h3>First Slide Title</h3>
+                <p>
+                  This is the description for the first slide of the carousel.
+                </p>
+              </figcaption>
+            </figure>
+
+            <!-- SLIDE 2 -->
+
+            <!-- SLIDE 3 -->
+          </div>
+
+          <!-- CAROUSEL ARROWS -->
+          <nav>
+            <button
+              class="carousel-control carousel-control-prev"
+              aria-label="Previous slide"
+            >
+              &#10094;
+            </button>
+
+            <button
+              class="carousel-control carousel-control-next"
+              aria-label="Next slide"
+            >
+              &#10095;
+            </button>
+          </nav>
+        </div>
+
+        <!-- CAROUSEL DOTS -->
+        <nav class="carousel-indicators" aria-label="Carousel navigation">
+          <button
+            class="carousel-indicator active"
+            aria-label="Go to slide 1"
+            aria-current="true"
+          ></button>
+
+          <button
+            class="carousel-indicator"
+            aria-label="Go to slide 2"
+          ></button>
+          <button
+            class="carousel-indicator"
+            aria-label="Go to slide 3"
+          ></button>
+        </nav>
+      </section>
+    </main>
+  </body>
 </html>
