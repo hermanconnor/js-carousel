@@ -50,10 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Event listeners for navigation arrows
   prevButton.addEventListener('click', () => {
     gotToSlide(currentIndex - 1);
+    resetAutoplay();
   });
 
   nextButton.addEventListener('click', () => {
     gotToSlide(currentIndex + 1);
+    resetAutoplay();
   });
 
   // Event listeners for indicator dots
@@ -61,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dot.addEventListener('click', () => {
       const index = parseInt(dot.dataset.index);
       gotToSlide(index);
+      resetAutoplay();
     });
 
     // Keyboard accessibility for dots
@@ -70,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const index = parseInt(dot.dataset.index);
         gotToSlide(index);
+        resetAutoplay();
       }
     });
   });
@@ -78,8 +82,29 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') {
       gotToSlide(currentIndex - 1);
+      resetAutoplay();
     } else if (e.key === 'ArrowRight') {
       gotToSlide(currentIndex + 1);
+      resetAutoplay();
     }
   });
+
+  // Autoplay Functionality
+  function startAutoplay() {
+    autoplayInterval = setInterval(() => {
+      gotToSlide(currentIndex + 1);
+    }, AUTOPLAY_DELAY);
+  }
+
+  function pauseAutoplay() {
+    clearInterval(autoplayInterval);
+  }
+
+  function resetAutoplay() {
+    pauseAutoplay();
+    startAutoplay();
+  }
+
+  // Start autoplay
+  startAutoplay();
 });
