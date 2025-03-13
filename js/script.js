@@ -60,8 +60,26 @@ document.addEventListener('DOMContentLoaded', () => {
   indicators.forEach((dot) => {
     dot.addEventListener('click', () => {
       const index = parseInt(dot.dataset.index);
-
       gotToSlide(index);
     });
+
+    // Keyboard accessibility for dots
+    dot.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key == ' ') {
+        e.preventDefault();
+
+        const index = parseInt(dot.dataset.index);
+        gotToSlide(index);
+      }
+    });
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      gotToSlide(currentIndex - 1);
+    } else if (e.key === 'ArrowRight') {
+      gotToSlide(currentIndex + 1);
+    }
   });
 });
