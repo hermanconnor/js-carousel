@@ -105,6 +105,19 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoplay();
   }
 
+  // Pause autoplay when user hovers over slider
+  carousel.addEventListener('mouseenter', pauseAutoplay);
+  carousel.addEventListener('mouseleave', startAutoplay);
+
+  // Pause autoplay when the page is not visible
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      pauseAutoplay();
+    } else {
+      startAutoplay();
+    }
+  });
+
   // Start autoplay
   startAutoplay();
 });
