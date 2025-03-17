@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const dotsContainer = document.querySelector('.carousel-indicators');
   const prevButton = document.querySelector('.carousel-control-prev');
   const nextButton = document.querySelector('.carousel-control-next');
+  const liveRegion = document.getElementById('slider-live-region');
 
   let currentIndex = 0;
   let autoplayInterval;
@@ -45,6 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
     indicators[index].setAttribute('aria-current', 'true');
 
     currentIndex = index;
+
+    // Announce slide change for screen readers
+    liveRegion.textContent = `Showing slide ${currentIndex + 1} of ${
+      slides.length
+    }`;
   };
 
   // Event listeners for navigation arrows
