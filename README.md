@@ -51,3 +51,9 @@ To customize the carousel for your needs, you can:
 - **✏️ Adjust Slide Descriptions**: Edit the `<figcaption>` content in the HTML for each slide.
 - **🎨 Modify Styles**: Change the appearance of the carousel by modifying the `styles.css` file.
 - **➕ Add More Slides**: Duplicate any `<figure class="carousel-slide">` and update the image source and description to add more slides.
+
+## Example
+
+Here is a preview of the carousel:
+
+![Preview JavaScript Carousel](./images/screenshot.png)
