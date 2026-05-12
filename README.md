@@ -22,7 +22,7 @@ To get started with this project, follow these simple steps:
 1. **Clone this repository:**
 
    ```bash
-   git clone https://github.com/your-username/js-carousel.git
+   git clone https://github.com/hermanconnor/js-carousel.git
    ```
 
 2. **Navigate to the project folder:**
